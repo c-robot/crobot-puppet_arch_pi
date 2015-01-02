@@ -27,5 +27,8 @@ cd /data/github/skaufm
 
 git clone https://github.com/skaufm/crobot-puppet_arch_pi
 
+cd crobot-puppet_arch_pi
+
+git pull origin master
 
 echo "now you should be able to run a 'puppet apply <mypuppetfile>.pp' "
