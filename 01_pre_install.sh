@@ -4,8 +4,8 @@ function install_docker {
 	pacman -S --noconfirm docker
 	systemctl start docker.service 
 	systemctl status docker.service
-	docker pull resin/rpi-raspbian:jessie
-	docker run resin/rpi-raspbian
+	docker pull skaufm/rpi-arduino
+	docker run skaufm/rpi-arduino
 }
 
 
