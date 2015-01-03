@@ -5,7 +5,7 @@ function install_docker {
 	systemctl start docker.service 
 	systemctl status docker.service
 	docker pull skaufm/rpi-arduino
-	docker run skaufm/rpi-arduino
+	docker run -i -t --device=/dev/ttyACM0:/dev/ttyACM0  skaufm/rpi-arduino /bin/bash
 }
 
 
@@ -37,7 +37,7 @@ git pull origin master
 while true; do
     read -p "Do you wish to install docker and run an raspbian jessie container ?" yn
     case $yn in
-        [Yy]* ) make install; break;;
+        [Yy]* ) install_docker; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
